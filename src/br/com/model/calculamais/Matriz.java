@@ -8,6 +8,7 @@ public class Matriz {
     private double[][] matriz2;
     private int qtdLinhas1, qtdColunas1, qtdLinhas2, qtdColunas2;
     
+    public Matriz(){}
     public Matriz(int i, int j, int k, int l){
         this.matrizSoma = new double[i][j];
         this.matrizSubtracao = new double[i][j];
@@ -60,6 +61,22 @@ public class Matriz {
 
     public void setMatriz2(double[][] matriz2) {
         this.matriz2 = matriz2;
+    }
+
+    public void setQtdLinhas1(Integer qtdLinhas1) {
+        this.qtdLinhas1 = qtdLinhas1;
+    }
+
+    public void setQtdColunas1(Integer qtdColunas1) {
+        this.qtdColunas1 = qtdColunas1;
+    }
+
+    public void setQtdLinhas2(int qtdLinhas2) {
+        this.qtdLinhas2 = qtdLinhas2;
+    }
+
+    public void setQtdColunas2(int qtdColunas2) {
+        this.qtdColunas2 = qtdColunas2;
     }
 
     public int getQtdLinhas1() {
