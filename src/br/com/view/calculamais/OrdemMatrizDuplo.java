@@ -6,7 +6,7 @@ import javax.swing.UIManager;
 
 public class OrdemMatrizDuplo extends javax.swing.JFrame {
 
-    public Matriz matriz = new Matriz();
+    
     public OrdemMatrizDuplo() {
         initComponents();
     }
@@ -227,10 +227,7 @@ public class OrdemMatrizDuplo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
-        matriz.setQtdLinhas1(Integer.parseInt(linha1.getText()));
-        matriz.setQtdColunas1(Integer.parseInt(coluna1.getText())); 
-        matriz.setQtdLinhas2(Integer.parseInt(linha2.getText())); 
-        matriz.setQtdColunas2(Integer.parseInt(coluna2.getText()));
+
     }//GEN-LAST:event_salvarActionPerformed
 
     /**

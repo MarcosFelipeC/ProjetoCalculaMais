@@ -42,7 +42,14 @@ public class Matriz {
         qtdColunas1 = j;
         this.matriz1 = matriz1;
     }
-
+    
+    public void matrizInit(){
+        this.matrizSoma = new double[qtdLinhas1][qtdColunas1];
+        this.matrizSubtracao = new double[qtdLinhas1][qtdColunas1];
+        this.matrizMultiplicacaoE = new double[qtdLinhas1][qtdColunas1];
+        this.matriz1 = new double[qtdLinhas1][qtdColunas1];
+        this.matriz2 = new double[qtdLinhas2][qtdColunas2];
+    }
     public double[][] getMatrizSoma() {
         return matrizSoma;
     }
@@ -105,7 +112,20 @@ public class Matriz {
     public double[][] getMatrizMultiplicacaoM() {
         return matrizMultiplicacaoM;
     }
-
+    public void preencheMatriz(int num, int i, int j, double val){
+        switch (num){
+            case 1:
+                if (i <= qtdLinhas1 && j <= qtdColunas1){
+                    this.matriz1[i][j] = val;
+                }
+                break;
+            case 2:
+                if (i <= qtdLinhas2 && j <= qtdColunas2){
+                    this.matriz2[i][j] = val;
+                }
+                break;
+        }
+    }
     public void somar(){ 
         for (int linhaM = 0; linhaM < this.qtdLinhas1; linhaM++){
             for (int colunaM = 0; colunaM < this.qtdColunas1; colunaM++){

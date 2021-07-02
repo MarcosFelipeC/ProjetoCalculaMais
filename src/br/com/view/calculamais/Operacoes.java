@@ -235,7 +235,7 @@ public class Operacoes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void somaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_somaActionPerformed
-        new OrdemMatrizDuplo().setVisible(true);
+        new OrdemMatriz().setVisible(true);
     }//GEN-LAST:event_somaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

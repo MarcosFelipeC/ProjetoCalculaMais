@@ -1,11 +1,11 @@
 package br.com.view.calculamais;
 
+import br.com.model.calculamais.Matriz;
 import javax.swing.UIManager;
 
 
 public class OrdemMatriz extends javax.swing.JFrame {
 
-  
     public OrdemMatriz() {
         initComponents();
     }
@@ -22,8 +22,8 @@ public class OrdemMatriz extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        linhas = new javax.swing.JTextField();
-        colunas = new javax.swing.JTextField();
+        linha = new javax.swing.JTextField();
+        coluna = new javax.swing.JTextField();
         matriz = new javax.swing.JLabel();
         salvar = new javax.swing.JButton();
 
@@ -72,17 +72,17 @@ public class OrdemMatriz extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Número de Colunas:");
 
-        linhas.setBackground(new java.awt.Color(204, 204, 204));
-        linhas.setColumns(5);
-        linhas.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        linhas.setForeground(new java.awt.Color(0, 0, 0));
-        linhas.setText("0");
+        linha.setBackground(new java.awt.Color(204, 204, 204));
+        linha.setColumns(5);
+        linha.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        linha.setForeground(new java.awt.Color(0, 0, 0));
+        linha.setText("0");
 
-        colunas.setBackground(new java.awt.Color(204, 204, 204));
-        colunas.setColumns(5);
-        colunas.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        colunas.setForeground(new java.awt.Color(0, 0, 0));
-        colunas.setText("0");
+        coluna.setBackground(new java.awt.Color(204, 204, 204));
+        coluna.setColumns(5);
+        coluna.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        coluna.setForeground(new java.awt.Color(0, 0, 0));
+        coluna.setText("0");
 
         matriz.setBackground(new java.awt.Color(0, 0, 0));
         matriz.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
@@ -110,7 +110,7 @@ public class OrdemMatriz extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(linhas))
+                        .addComponent(linha))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -119,7 +119,7 @@ public class OrdemMatriz extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(colunas))
+                        .addComponent(coluna))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -137,10 +137,10 @@ public class OrdemMatriz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(linhas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(linha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(colunas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(coluna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,7 +164,12 @@ public class OrdemMatriz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
-        // TODO add your handling code here:
+       Matrizes.linhasM1 = Integer.parseInt(linha.getText());
+       Matrizes.colunasM1 = Integer.parseInt(coluna.getText());
+       Matrizes.linhasM2 = Integer.parseInt(linha.getText());
+       Matrizes.colunasM2 = Integer.parseInt(coluna.getText());
+       Matrizes.initM();
+       new ElementoMatriz().setVisible(true);
     }//GEN-LAST:event_salvarActionPerformed
 
     /**
@@ -204,7 +209,7 @@ public class OrdemMatriz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField colunas;
+    private javax.swing.JTextField coluna;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -212,7 +217,7 @@ public class OrdemMatriz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField linhas;
+    private javax.swing.JTextField linha;
     private javax.swing.JLabel matriz;
     private javax.swing.JButton salvar;
     // End of variables declaration//GEN-END:variables
