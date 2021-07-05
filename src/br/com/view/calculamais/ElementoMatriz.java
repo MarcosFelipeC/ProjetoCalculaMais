@@ -5,11 +5,11 @@ import javax.swing.UIManager;
 
 
 public class ElementoMatriz extends javax.swing.JFrame {
-    int contL=0, contC=0;
+    int contL=1, contC=0;
     Matriz setar = new Matriz(Matrizes.linhasM1,Matrizes.colunasM1,Matrizes.linhasM2,Matrizes.colunasM2);
     public ElementoMatriz() {
         initComponents();
-        linha.setText(""+(contL+1));
+        linha.setText(""+(contL));
         coluna.setText(""+(contC+1));
         matrizN.setText("1");
     }
@@ -176,17 +176,18 @@ public class ElementoMatriz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
-        if (contC >= (Matrizes.colunasM1-1)){
+        
+        if (contC >= (Matrizes.colunasM1)){
                 contL ++;
                 contC = 0;
-                linha.setText(""+(contL+1));
-                coluna.setText(""+(contC+1));
+                linha.setText(""+(contL));
+                coluna.setText(""+(contC));
         }  
-        if (contL < Matrizes.linhasM1){   
-            setar.preencheMatriz(1, contL, contC, Double.parseDouble(valor.getText()));
+        if (contL < Matrizes.linhasM1){
             contC++;
-            linha.setText(""+(contL+1));
-            coluna.setText(""+(contC+1));
+            setar.preencheMatriz(1, contL-1, contC-1, Double.parseDouble(valor.getText()));
+            linha.setText(""+(contL));
+            coluna.setText(""+(contC));
             matrizN.setText("1");
                
         }
