@@ -43,13 +43,7 @@ public class Matriz {
         this.matriz1 = matriz1;
     }
     
-    public void matrizInit(){
-        this.matrizSoma = new double[qtdLinhas1][qtdColunas1];
-        this.matrizSubtracao = new double[qtdLinhas1][qtdColunas1];
-        this.matrizMultiplicacaoE = new double[qtdLinhas1][qtdColunas1];
-        this.matriz1 = new double[qtdLinhas1][qtdColunas1];
-        this.matriz2 = new double[qtdLinhas2][qtdColunas2];
-    }
+    
     public double[][] getMatrizSoma() {
         return matrizSoma;
     }
@@ -111,6 +105,23 @@ public class Matriz {
     }
     public double[][] getMatrizMultiplicacaoM() {
         return matrizMultiplicacaoM;
+    }
+    
+    public void matrizInit(){
+        this.matrizSoma = new double[qtdLinhas1][qtdColunas1];
+        this.matrizSubtracao = new double[qtdLinhas1][qtdColunas1];
+        this.matrizMultiplicacaoE = new double[qtdLinhas1][qtdColunas1];
+        this.matriz1 = new double[qtdLinhas1][qtdColunas1];
+        this.matriz2 = new double[qtdLinhas2][qtdColunas2];
+    }
+    public void matrizInit1(){
+        this.matriz1 = new double[qtdLinhas1][qtdColunas1];
+    }
+     public void matrizInit2(){
+        this.matriz2 = new double[qtdLinhas1][qtdColunas1];
+        this.matrizSoma = new double[qtdLinhas1][qtdColunas1];
+        this.matrizSubtracao = new double[qtdLinhas1][qtdColunas1];
+        this.matrizMultiplicacaoE = new double[qtdLinhas1][qtdColunas1];
     }
     public void preencheMatriz(int num, int i, int j, double val){
         switch (num){
