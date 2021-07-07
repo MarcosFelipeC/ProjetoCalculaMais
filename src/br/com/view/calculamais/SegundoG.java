@@ -5,13 +5,11 @@ import static java.lang.Math.sqrt;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
-
 public class SegundoG extends javax.swing.JFrame {
 
     public SegundoG() {
         initComponents();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -224,34 +222,52 @@ public class SegundoG extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calculaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculaxActionPerformed
-        
-        
+
         Double a = Double.parseDouble(eqA.getText());
         Double b = Double.parseDouble(eqB.getText());
         Double c = Double.parseDouble(eqC.getText());
-        
+
         Double x1, x2, delta, raiz_delta;
-        
-        if (a==0){
+
+        if (a == 0) {
             JOptionPane.showMessageDialog(null, "O coeficinete que multiplica X² deve ser diferente de zero!");
-	}
-        else{
-            delta = (b*b - 4*(a*c));
+        } else {
+            delta = (b * b - 4 * (a * c));
 
-            if (delta >= 0){
-                    raiz_delta = sqrt(delta);
-                    x1 = (-b+raiz_delta)/(2*a);
-                    x2 = (-b-raiz_delta)/(2*a);
-                    if (x1!=x2){
-                        x1val.setText(x1+"");
-                        x2val.setText(x2+"");
-                    }
-                    else{
-                        x1val.setText(x1+"");
-                        x2val.setText(x2+"");
-                        JOptionPane.showMessageDialog(null, "Como delta = 0, o valor de X' = X'' !");
-                    }
+            if (delta >= 0) {
+                String passos = "Passos da Resolução: \n"
+                        + "Cálculo do Delta:\n"
+                        + "delta = (b² - 4*(a*c))\n"
+                        + "delta = (" + b + "² - 4*(" + a + "*" + c + "))\n"
+                        + "delta = "+delta;
+                raiz_delta = sqrt(delta);
+                x1 = (-b + raiz_delta) / (2 * a);
+                x2 = (-b - raiz_delta) / (2 * a);
+                if (x1 != x2) {
+                    passos += "\nCálculo das Raizes:\n"
+                            +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a"
+                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a
+                            +"X1 = "+ x1 + " e X'' = "+x2; 
+                    x1val.setText(x1 + "");
+                    x2val.setText(x2 + "");
+                    JOptionPane.showMessageDialog(null, passos);
+                } else {
+                    passos += "\nComo delta = 0, o valor de X' = X'' !:\n"
+                            +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a"
+                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a
+                            +"X1 = "+ x1 + " e X'' = "+x2; 
+                    x1val.setText(x1 + "");
+                    x2val.setText(x2 + "");
+                    JOptionPane.showMessageDialog(null, passos);
+                }
 
+            } else {
+                String deltaMsg = "O valor de Delta não pode ser negativo! \n"
+                        + "Cálculo do Delta:\n"
+                        + "delta = (b² - 4*(a*c))\n"
+                        + "delta = (" + b + "² - 4*(" + a + "*" + c + "))\n"
+                        + "delta = 0";
+                JOptionPane.showMessageDialog(null, deltaMsg);
             }
         }
     }//GEN-LAST:event_calculaxActionPerformed

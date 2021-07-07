@@ -4,13 +4,11 @@ import br.com.model.calculamais.Matriz;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
-
 public class PrimeiroG extends javax.swing.JFrame {
 
     public PrimeiroG() {
         initComponents();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -116,7 +114,7 @@ public class PrimeiroG extends javax.swing.JFrame {
         });
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Exemplo: 2x + 5 = 0");
+        jLabel6.setText("Exemplo de preenchimento: 2x + 5 = 0");
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("O valor de X é:");
@@ -201,12 +199,21 @@ public class PrimeiroG extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
-        if (Double.parseDouble(cangular.getText())==0.0){
+        if (Double.parseDouble(cangular.getText()) == 0.0) {
             JOptionPane.showMessageDialog(null, "O coeficinete angular deve ser diferente de zero!");
-	}
-        else{
-            Double raiz = (Double.parseDouble(direito.getText()) - Double.parseDouble(independente.getText()))/(Double.parseDouble(cangular.getText()));
-            xval.setText(raiz+"");
+        } else {
+            Double a = Double.parseDouble(cangular.getText());
+            Double b = Double.parseDouble(direito.getText());
+            Double c = Double.parseDouble(independente.getText());
+
+            Double raiz = ((b - c) / a);
+
+            String passos = "Passos da resolução:\n\n" + a + "X + " + b + " = " + c + "\n"
+                    + a + "X = " + c + " - (" + b + ")\n"
+                    + "X = (" + (c + b) + ")/ " + a + "\n"
+                    + "X = " + raiz + "";
+            JOptionPane.showMessageDialog(null, passos);
+            xval.setText(raiz + "");
         }
     }//GEN-LAST:event_salvarActionPerformed
 
