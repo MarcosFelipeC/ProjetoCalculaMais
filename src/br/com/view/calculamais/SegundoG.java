@@ -245,16 +245,16 @@ public class SegundoG extends javax.swing.JFrame {
                 x2 = (-b - raiz_delta) / (2 * a);
                 if (x1 != x2) {
                     passos += "\nCálculo das Raizes:\n"
-                            +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a"
-                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a
+                            +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a\n"
+                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a +"\n"
                             +"X1 = "+ x1 + " e X'' = "+x2; 
                     x1val.setText(x1 + "");
                     x2val.setText(x2 + "");
                     JOptionPane.showMessageDialog(null, passos);
                 } else {
                     passos += "\nComo delta = 0, o valor de X' = X'' !:\n"
-                            +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a"
-                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a
+                            +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a\n"
+                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a+"\n"
                             +"X1 = "+ x1 + " e X'' = "+x2; 
                     x1val.setText(x1 + "");
                     x2val.setText(x2 + "");
@@ -266,7 +266,7 @@ public class SegundoG extends javax.swing.JFrame {
                         + "Cálculo do Delta:\n"
                         + "delta = (b² - 4*(a*c))\n"
                         + "delta = (" + b + "² - 4*(" + a + "*" + c + "))\n"
-                        + "delta = 0";
+                        + "delta = " + delta;
                 JOptionPane.showMessageDialog(null, deltaMsg);
             }
         }
