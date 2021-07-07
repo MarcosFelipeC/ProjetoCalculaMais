@@ -1,6 +1,7 @@
 package br.com.principal.calculamais;
 
 import br.com.model.calculamais.Matriz;
+import br.com.view.calculamais.Escolha;
 import java.util.Scanner;
 
 public class Calculadora {
@@ -23,6 +24,7 @@ public class Calculadora {
                     menuMatriz();
                     break;
                 case 2:
+                    new Escolha().setVisible(true);
                     break;
                 default:
                     System.out.println("Opção Inválida!");
