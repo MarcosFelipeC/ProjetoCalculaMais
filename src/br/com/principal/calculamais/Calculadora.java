@@ -13,7 +13,7 @@ public class Calculadora {
         String opcoes = "\n1 - Operações com Matrizes;"
                 + "\n2 - Cálculo de equações.";
         while (true) {
-            System.out.print("\n\tOperaçoes:");
+            System.out.print("\n\tOperações:");
             System.out.println(opcoes);
             System.out.print("\nEscolha uma opção: ");
             int op = sc.nextInt();
@@ -117,12 +117,12 @@ public class Calculadora {
     public static void operacoesMatriz() {
         while (stayMenuOperacoes) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("\n\tOperaçoes");
+            System.out.println("\n\tOperações");
 
             if (controle == 1) {
-                System.out.println("1 - Determinante Matriz 1; \n3 - Multiplicaçao Matriz 1 por escalar;\n8 - Voltar para menu anterior.\n");
+                System.out.println("1 - Determinante Matriz 1; \n3 - Multiplicação Matriz 1 por escalar;\n8 - Voltar para menu anterior.\n");
             } else {
-                System.out.println("1 - Determinante Matriz 1; \n2 - Determinante Matriz 2; \n3 - Multiplicaçao Matriz 1 por escalar;\n4 - Multiplicaçao Matriz 2 por escalar;\n5 - Soma das matrizes;\n6 - Subtraçao das Matrizes;\n7 - Multiplicaçao das Matrizes;\n8 - Voltar para menu anterior.\n");
+                System.out.println("1 - Determinante Matriz 1; \n2 - Determinante Matriz 2; \n3 - Multiplicação Matriz 1 por escalar;\n4 - Multiplicação Matriz 2 por escalar;\n5 - Soma das matrizes;\n6 - Subtraçao das Matrizes;\n7 - Multiplicação das Matrizes;\n8 - Voltar para menu anterior.\n");
             }
             System.out.print("Escolha uma opção: ");
             op = sc.nextInt();
@@ -131,7 +131,7 @@ public class Calculadora {
                 case 1:
                     if (matriz.calculaDet(1) == null) {
                         System.out.println("Operaçao Invalida!");
-                        System.out.println("Favor, verifique se a matriz 1 e matriz quadrada e se a ordem nao utrapassa 3!\n");
+                        System.out.println("Favor, verifique se a matriz 1 é matriz quadrada e se a ordem não utrapassa 3!\n");
                         volta();
                     } else {
                         System.out.println("\nDeterminante da Matriz 1 vale: ");
@@ -144,7 +144,7 @@ public class Calculadora {
                     if (controle != 1){
                         if (matriz.calculaDet(1) == null) {
                             System.out.println("Operaçao Invalida!");
-                            System.out.println("Favor, verifique se a matriz 2 e matriz quadrada e se a ordem nao utrapassa 3!\n");
+                            System.out.println("Favor, verifique se a matriz 2 é matriz quadrada e se a ordem não utrapassa 3!\n");
                             volta();
                         } else {
                             System.out.println("\nDeterminante da Matriz 2 vale: ");
@@ -190,8 +190,8 @@ public class Calculadora {
                     if (controle != 1){
                         
                         if (matriz.somar() == null) {
-                            System.out.println("Operaçao Invalida!");
-                            System.out.println("Favor, verifique se a matriz 1 e matriz 2 sao de mesma ordem!\n");
+                            System.out.println("Operação Invalida!");
+                            System.out.println("Favor, verifique se a matriz 1 e matriz 2 são de mesma ordem!\n");
                             volta();
                         }  
                         else{
@@ -212,8 +212,8 @@ public class Calculadora {
                     if (controle != 1){
                         
                         if (matriz.subtrair() == null) {
-                            System.out.println("Operaçao Invalida!");
-                            System.out.println("Favor, verifique se a matriz 1 e matriz 2 sao de mesma ordem!\n");
+                            System.out.println("Operação Invalida!");
+                            System.out.println("Favor, verifique se a matriz 1 e matriz 2 são de mesma ordem!\n");
                             volta();
                         }  
                         else{
@@ -234,12 +234,12 @@ public class Calculadora {
                     if (controle != 1){
                         
                         if (matriz.pMatrizMatriz() == null) {
-                            System.out.println("Operaçao Invalida!");
-                            System.out.println("Favor, verifique se o numero de colunas da matriz 1 e o mesmo numero de linhas da matriz 2!\n");
+                            System.out.println("Operação Invalida!");
+                            System.out.println("Favor, verifique se o numero de colunas da matriz 1 é o mesmo numero de linhas da matriz 2!\n");
                             volta();
                         }  
                         else{
-                            System.out.println("\nA multiplicaçao das matrizes vale: ");
+                            System.out.println("\nA multiplicação das matrizes vale: ");
                             double [][] multiplicacao = matriz.getMatrizMultiplicacaoM();
                             for (int linha = 0; linha < matriz.getQtdLinhas1(); linha++) {
                                 for (int coluna = 0; coluna < matriz.getQtdColunas1(); coluna++) {

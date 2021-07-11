@@ -90,7 +90,7 @@ public class SegundoG extends javax.swing.JFrame {
         });
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("X² +");
+        jLabel3.setText("*X² + (");
 
         eqB.setBackground(new java.awt.Color(204, 204, 204));
         eqB.setColumns(2);
@@ -104,7 +104,7 @@ public class SegundoG extends javax.swing.JFrame {
         });
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("X +");
+        jLabel5.setText(")*X + (");
 
         eqC.setBackground(new java.awt.Color(204, 204, 204));
         eqC.setColumns(2);
@@ -127,7 +127,7 @@ public class SegundoG extends javax.swing.JFrame {
         x1val.setText("##");
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("= 0");
+        jLabel7.setText(") = 0");
 
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText(" e o valor de X'' é:");
@@ -171,9 +171,9 @@ public class SegundoG extends javax.swing.JFrame {
                         .addComponent(x1val)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
-                        .addGap(3, 3, 3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(x2val)
-                        .addGap(0, 20, Short.MAX_VALUE)))
+                        .addGap(0, 17, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -195,13 +195,14 @@ public class SegundoG extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(calculax)
-                    .addComponent(jLabel4)
-                    .addComponent(x1val)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(x2val)))
+                        .addComponent(x2val))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(calculax)
+                        .addComponent(jLabel4)
+                        .addComponent(x1val)))
                 .addGap(75, 75, 75))
         );
 
@@ -238,7 +239,7 @@ public class SegundoG extends javax.swing.JFrame {
                 String passos = "Passos da Resolução: \n"
                         + "Cálculo do Delta:\n"
                         + "delta = (b² - 4*(a*c))\n"
-                        + "delta = (" + b + "² - 4*(" + a + "*" + c + "))\n"
+                        + "delta = ((" + b + ")² - 4*((" + a + ")*(" + c + ")))\n"
                         + "delta = "+delta;
                 raiz_delta = sqrt(delta);
                 x1 = (-b + raiz_delta) / (2 * a);
@@ -246,16 +247,16 @@ public class SegundoG extends javax.swing.JFrame {
                 if (x1 != x2) {
                     passos += "\nCálculo das Raizes:\n"
                             +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a\n"
-                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a +"\n"
-                            +"X1 = "+ x1 + " e X'' = "+x2; 
+                            +"X' = (-("+(b)+ ") + (" +raiz_delta+"))/2*"+a+" e X'' = (-("+(b)+ ") - (" +raiz_delta+"))/2*"+a +"\n"
+                            +"X' = "+ x1 + " e X'' = "+x2; 
                     x1val.setText(x1 + "");
                     x2val.setText(x2 + "");
                     JOptionPane.showMessageDialog(null, passos);
                 } else {
                     passos += "\nComo delta = 0, o valor de X' = X'' !:\n"
                             +"X' = (-b + Raiz_de_Delta)/2*a e X'' = (-b - Raiz_de_Delta)/2*a\n"
-                            +"X' = (-"+(b)+ " + " +raiz_delta+")/2*"+a+" e X'' = (-"+(b)+ " - " +raiz_delta+")/2*"+a+"\n"
-                            +"X1 = "+ x1 + " e X'' = "+x2; 
+                            +"X' = (-("+(b)+ ") + (" +raiz_delta+"))/2*"+a+" e X'' = (-("+(b)+ ") - (" +raiz_delta+"))/2*"+a+"\n"
+                            +"X' = X'' = "+ x1; 
                     x1val.setText(x1 + "");
                     x2val.setText(x2 + "");
                     JOptionPane.showMessageDialog(null, passos);
@@ -265,7 +266,7 @@ public class SegundoG extends javax.swing.JFrame {
                 String deltaMsg = "O valor de Delta não pode ser negativo! \n"
                         + "Cálculo do Delta:\n"
                         + "delta = (b² - 4*(a*c))\n"
-                        + "delta = (" + b + "² - 4*(" + a + "*" + c + "))\n"
+                        + "delta = ((" + b + ")² - 4*((" + a + ")*(" + c + ")))\n"
                         + "delta = " + delta;
                 JOptionPane.showMessageDialog(null, deltaMsg);
             }

@@ -119,6 +119,7 @@ public class Matriz {
         this.matrizSoma = new double[qtdLinhas1][qtdColunas1];
         this.matrizSubtracao = new double[qtdLinhas1][qtdColunas1];
         this.matrizMultiplicacaoE = new double[qtdLinhas1][qtdColunas1];
+        this.matrizMultiplicacaoM = new double[qtdLinhas1][qtdColunas2];
     }
     public void preencheMatriz(int num, int i, int j, double val){
         switch (num){
@@ -173,9 +174,9 @@ public class Matriz {
     
     public Integer pMatrizMatriz(){
         if (qtdColunas1 == qtdLinhas2){
-            this.matrizMultiplicacaoM = new double[qtdLinhas1][qtdColunas2];
-            for (int linhaM = 0; linhaM < qtdLinhas1; linhaM++){
-                for (int colunaM = 0; colunaM < qtdColunas2; colunaM++){
+            //this.matrizMultiplicacaoM = new double[qtdLinhas1][qtdColunas2];
+            for (int linhaM = 0; linhaM <= qtdLinhas1; linhaM++){
+                for (int colunaM = 0; colunaM <= qtdColunas2; colunaM++){
                     matrizMultiplicacaoM[linhaM][colunaM] = 0;
                     int i = 0, j = 0;
                     do{

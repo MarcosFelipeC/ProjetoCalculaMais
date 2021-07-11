@@ -86,7 +86,7 @@ public class PrimeiroG extends javax.swing.JFrame {
         });
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("X +");
+        jLabel3.setText("X + (");
 
         independente.setBackground(new java.awt.Color(204, 204, 204));
         independente.setColumns(2);
@@ -100,7 +100,7 @@ public class PrimeiroG extends javax.swing.JFrame {
         });
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("=");
+        jLabel5.setText(") =");
 
         direito.setBackground(new java.awt.Color(204, 204, 204));
         direito.setColumns(2);
@@ -135,7 +135,7 @@ public class PrimeiroG extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 194, Short.MAX_VALUE)
+                        .addGap(0, 186, Short.MAX_VALUE)
                         .addComponent(cangular, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
@@ -145,7 +145,7 @@ public class PrimeiroG extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(direito, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 194, Short.MAX_VALUE))
+                        .addGap(0, 186, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -203,14 +203,14 @@ public class PrimeiroG extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O coeficinete angular deve ser diferente de zero!");
         } else {
             Double a = Double.parseDouble(cangular.getText());
-            Double b = Double.parseDouble(direito.getText());
-            Double c = Double.parseDouble(independente.getText());
+            Double b = Double.parseDouble(independente.getText());
+            Double c = Double.parseDouble(direito.getText());
 
-            Double raiz = ((b - c) / a);
+            Double raiz = ((c - b) / a);
 
-            String passos = "Passos da resolução:\n\n" + a + "X + " + b + " = " + c + "\n"
+            String passos = "Passos da resolução:\n\n" + a + "X + (" + b + ") = " + c + "\n"
                     + a + "X = " + c + " - (" + b + ")\n"
-                    + "X = (" + (c + b) + ")/ " + a + "\n"
+                    + "X = (" + (c - b) + ")/ " + a + "\n"
                     + "X = " + raiz + "";
             JOptionPane.showMessageDialog(null, passos);
             xval.setText(raiz + "");
